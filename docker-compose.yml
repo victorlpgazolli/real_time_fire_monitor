@@ -1,0 +1,25 @@
+version: "2"
+services:
+  backend:
+    build:
+      context: ./backend/
+    command: npm start
+    volumes:
+      - ./backend/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+  frontend:
+    build:
+      context: ./frontend/
+    command: npm start
+    volumes:
+      - ./frontend/:/usr/app
+      - /usr/app/node_modules
+    env_file: ./frontend/.env
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"

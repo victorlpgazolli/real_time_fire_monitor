@@ -1,0 +1,28 @@
+{
+  "name": "fire_monitor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "postinstall": "npm rebuild grpc --target=6.1.0 --target_arch=x64 --target_platform=linux --target_libc=glibc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "mongoose": "^5.6.10",
+    "node-fetch": "^2.6.1",
+    "ttn": "^2.3.3",
+    "watchman": "^1.0.0",
+    "ws": "^7.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
