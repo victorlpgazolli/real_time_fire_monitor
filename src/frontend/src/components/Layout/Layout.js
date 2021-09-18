@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Switch, Route, withRouter, Redirect } from 'react-router';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import Charts from '../../pages/components/charts/Charts';
 import Dashboard from '../../pages/dashboard';
 
 import Header from '../Header';
@@ -21,9 +20,6 @@ class Layout extends React.Component {
     sidebarStatic: false,
     sidebarOpened: false,
   };
-  constructor(props) {
-    super(props);
-  }
 
 
   render() {
@@ -47,7 +43,6 @@ class Layout extends React.Component {
                 <Switch>
                   <Route path="/app/main" exact render={() => <Redirect to="/app/main/dashboard" />} />
                   <Route path="/app/main/dashboard" exact component={Dashboard} />
-                  {/* <Route path="/app/main/stats/:name" params exact component={Charts} /> */}
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
