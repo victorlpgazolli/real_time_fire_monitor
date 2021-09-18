@@ -1,7 +1,7 @@
-# 
+# Projeto de internet das coisas de baixo custo para monitoramento de incêndios em áreas sensíveis
 
 
-### Indice:
+##  Indice:
 - [Escopo do projeto](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/docs/RDE.pdf)
 - [Requisitos Técnicos](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/docs/LRT.pdf)
 - [Análise de Viabilidade](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/docs/RAV.pdf)
@@ -15,27 +15,33 @@
 - Código fonte do projeto
   - [Backend](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/backend)
   - [Frontend](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/frontend)
-  - [Firmware](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/firmware)i
+  - [Firmware](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/firmware)
+- [Resumo](#)
+- [Introdução](#)
+- [Objetivos](#)
+- [Metodologia](#)
+  - [Microcontrolador](#)
+  - [Sensor MQ 135](#)
+  - [Sensor DHT 11](#)
+  - [Módulo Lora Wan](#)
+  - [PCB](#)
+  - [PLACA SOLAR](#)
+- [Desenvolvimento](#)
+- [Resultados](#)
+- [Conclusão/Considerações](#)
+- [Rerefências Bibliograficas](#)
+- Integrantes
+  - Felipe Santos Bardella
+  - Victor Leonardo Pasqualini Gazolli
+  - Vinicius Zancanari de Santana
 
-
-
-![](RackMultipart20210918-4-z2pske_html_1772dfeccf0b821d.png)
-
-**Projeto de internet das coisas de baixo custo para monitoramento de incêndios em áreas sensíveis**
-
-Felipe Santos Bardella **RA:** 153755
-
-Victor Leonardo Pasqualini Gazolli **RA:** 154048
-
-Vinicius Zancanari de Santana **RA:** 156930
-
-**1. RESUMO**
+## **1. RESUMO**
 
 Com o grande número de queimadas que ocorreram no ano de 2020 no Brasil, surgiu uma preocupação ainda maior com a prevenção das mesmas, que impactaram de grande forma pessoas que viviam em regiões próximas às afetadas.
 
 Com isso, foi criado o Dispositivo de Queimadas que ajuda na prevenção contra queimadas informando o risco de fogo observado por meio de uma aplicação web.
 
-**2. INTRODUÇÃO**
+## **2. INTRODUÇÃO**
 
 A importância da conscientização sobre incêndios naturais mostrou-se relevante nos últimos anos pela sua relação com a degradação da Caatinga, sendo um ecossistema próprio do clima semiárido (ALVARES et al., 2013). Antongiovanni et al. (2020) identificaram, através de fragmentos da caatinga, que devido a incêndios e ações antrópicas o ambiente sofreu danos significativos.
 
@@ -49,27 +55,27 @@ Visto isso e com os conhecimentos técnicos na matéria de Fundamentos da Intern
 
 A Figura 1 mostra a área ameaçada por incêndios naturais no dia seis de março de 2021. A área afetada mostra-se no litoral do Nordeste, onde predomina o clima semiárido e vegetação da caatinga.
 
-![](RackMultipart20210918-4-z2pske_html_7a09dfa18ed8d464.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/mapa.png)
 
 Figura 1 - Risco de Fogo Observado. Foto: Inep 2021.
 
 Considerando o exposto, o projeto conta com um site que apresenta potencial para ser utilizado pela população e autoridades responsáveis, contendo dados sobre risco de incêndio natural em tempo real. Os dados são coletados através de sensores e transmitidos via sinal de rádio de baixo consumo de energia para uma central; consequentemente, esses dados são encaminhados a um servidor que disponibiliza as informações no site.
 
-**3. OBJETIVOS**
+## **3. OBJETIVOS**
 
 O objetivo do presente estudo é medir parâmetros ambientais a partir de sensores com transmissão em tempo real, de forma a determinar o risco de ocorrência de incêndio. Esses dados devem ser disponibilizados em um site para que a população e autoridades responsáveis monitorem o risco e tenham ciência quando ocorre incêndios.
 
-# **4. METODOLOGIA**
+## **4. METODOLOGIA**
 
 O sistema IoT para detecção precoce de incêndios naturais é composto por uma rede de sensores sem fio, e um sistema Web para monitoramento. Foram definidas três fases para o bom funcionamento do protótipo: medição de dados, transmissão e apresentação.
 
-Os nós da rede são responsáveis pela captação dos parâmetros ambientais como temperatura, umidade e dióxido de carbono. A transmissão dos dados é feita após a medição, e a informação é enviada para um gateway com conexão à internet. O fluxo de dados segue um caminho único, da coleta para a transmissão, e da transmissão para o armazenamento e apresentação em um servidor Web. A arquitetura do sistema é apresentada na Figura 2: ![](RackMultipart20210918-4-z2pske_html_32280db665857454.png)
+Os nós da rede são responsáveis pela captação dos parâmetros ambientais como temperatura, umidade e dióxido de carbono. A transmissão dos dados é feita após a medição, e a informação é enviada para um gateway com conexão à internet. O fluxo de dados segue um caminho único, da coleta para a transmissão, e da transmissão para o armazenamento e apresentação em um servidor Web. A arquitetura do sistema é apresentada na Figura 2: ![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo1.png)
 
-![](RackMultipart20210918-4-z2pske_html_7a41452cfd970f16.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo2.png)
 
-Figura 2 - Diagrama de blocos do projeto ![](RackMultipart20210918-4-z2pske_html_e385f798cac3c16f.png)
+Figura 2 - Diagrama de blocos do projeto ![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo2.png)
 
-![](RackMultipart20210918-4-z2pske_html_62c8548f2f70a987.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo3.png)
 
 Figura 2 - Diagrama de blocos do projeto
 
@@ -81,19 +87,19 @@ Os parâmetros ambientais necessários para determinar se existe risco de fogo s
 
 Visando o baixo consumo de energia e a transmissão em longas distâncias, foi adotado a tecnologia LoRaWAN, que é responsável pela comunicação do dispositivo com uma estação de recepção (Gateway).
 
-**4.1 MICROCONTROLADOR**
+### **4.1 MICROCONTROLADOR**
 
 O microcontrolador escolhido foi o Esp8266 (Figura 3), que tem a função de coletar os dados dos sensores de temperatura, umidade e dióxido de carbono (CO2), analisar e enviar a informação para o servidor. Ele é alimentado por uma placa de energia fotovoltaica 12V, 250mA e 3W.
 
-![](RackMultipart20210918-4-z2pske_html_8f507ef62a7f6021.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/microcontrolador.jpg)
 
 Figura 3 - Microcontrolador Esp8266
 
-**4.2 SENSOR MQ 135**
+### **4.2 SENSOR MQ 135**
 
 O sensor MQ 135 (Figura 4) detecta o gás dióxido de carbono (CO2) que é um dos pontos de confirmação para analisar se está ocorrendo um incêndio florestal ou apenas um falso positivo.
 
-![](RackMultipart20210918-4-z2pske_html_7ac614a87a2f379f.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/sensor_co2.png)
 
 Figura 4 - Sensor MQ 135 - Dióxido de Carbono (frente e verso)
 
@@ -101,81 +107,81 @@ Funcionando em uma faixa de 0 V a 5 V, o sensor trabalha em um range de 10 a 1.0
 
 Quando o MQ135 detecta os dados de CO2, a resistência dele abaixa e através de uma porta analógica do microcontrolador consegue-se transformar o dado em informação para análise.
 
-**4.3 SENSOR DHT 11**
+### **4.3 SENSOR DHT 11**
 
 O DHT 11 (Figura 5) é responsável por medir duas variáveis: temperatura e umidade. Este sensor trabalha no range de 3 V até 5 V, corrente de 0,5 mA até 2,5 mA, porém quando está no modo sleep (dormindo) tem um consumo entre 100 µA e 150 µA. A precisão ao aferir a temperatura é de ± 2 ºC e a umidade é de ± 5% UR.
 
-![](RackMultipart20210918-4-z2pske_html_c7991aa311153165.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/DHT.jpg)
 
 Figura 5 - Sensor DHT 11 - Temperatura e Umidade
 
-**4.4 MODULO LORA WAN**
+### **4.4 MODULO LORA WAN**
 
 Responsável pela comunicação entre dispositivo e servidor, o LoRa WAN (Figura 6) tem o propósito de transmitir dados de maneira eficiente utilizando pouca energia.
 
 O módulo LoRaWan trabalha com uma tensão entre 1,8 V até 4 V, com um consumo de corrente para transmissão de 110 mA e para receptação de 20 mA, a taxa de dados tem um range de 180 bps até 21900 bps. Em uma área aberta o LoRaWan tem alcance de até 15 km, porém dentro de uma floresta tem entre 1 a 3 km.
 
-![](RackMultipart20210918-4-z2pske_html_573bb0013693991f.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/lora.jpg)
 
 Figura 6 - Módulo LoRaWAN
 
-**4.5 PCB**
+### **4.5 PCB**
 
 A placa de circuito impresso, PCB, está localizada dentro do encapsulamento de filamento PLA (Ácido Polilático), projetada no programa de software livre KICAD. A placa contém os componentes, sensores, antena e o microcontrolador.
 
-![](RackMultipart20210918-4-z2pske_html_153f138baff38c05.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/pcb.jpg)
 
 Figura 7 - Placa de Circuito Impresso
 
-**4.6 PLACA SOLAR**
+### **4.6 PLACA SOLAR**
 
-![](RackMultipart20210918-4-z2pske_html_3ff55e44bdc9b6c6.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/placa_solar.jpg)
 
 Figura 8 - Placa solar.
 
-![](RackMultipart20210918-4-z2pske_html_e27adc2bb7f28862.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/esquematico.png)
 
 Figura 9 - Esquemático da Placa de Circuito Impresso (programa Kicad)
 
 Após receber carga pela placa solar (carga total = 12 V), o conversor DC/DC libera 5 V para os sensores e o módulo LoRa Wan. Já o microcontrolador precisa de apenas 3,3 V. No sensor DHT11 (temperatura e umidade) há um capacitor de 100 nF e um resistor pull up para filtragem de ruídos.
 
-# **5. DESENVOLVIMENTO**
+### **5. DESENVOLVIMENTO**
 
-## **5.1 APLICAÇÃO WEB**
+### **5.1 APLICAÇÃO WEB**
 
 A aplicação WEB (desenvolvido em React JS) é o meio em que os usuários da aplicação podem ver qual o risco de fogo observado em diferentes regiões do país, desde que hajam dispositivos instalados nelas.
 
 O mapa do Brasil com pontos em todos sensores instalados estão apresentados na Figura 7, mostrando em qual cidade está localizado ao passar o cursor por cima. Abaixo estão os cards que mostram todas localizações e seu nível de risco de fogo observado, junto dos parâmetros de umidade, temperatura e dióxido de carbono.
 
-![](RackMultipart20210918-4-z2pske_html_266609558bface0a.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/dashboard.png)
 
 Figura 10 - Aplicação WEB
 
-## **5.2 APLICAÇÃO BACKEND**
+### **5.2 APLICAÇÃO BACKEND**
 
 Desenvolvido em NodeJS, o backend é o intermediário entre o usuário e os sensores, e nele é feito o tratamento a inserção dos dados em um banco de dados não relacional (MongoDB), e o envio da notificação para a aplicação web para que ela atualize em tempo real.
 
-## **5.3 ENCAPSULAMENTO E PLACA DE CIRCUITO IMPRESSO**
+### **5.3 ENCAPSULAMENTO E PLACA DE CIRCUITO IMPRESSO**
 
 O encapsulamento do dispositivo foi elaborado no software Fusion 360 em que o grupo possui licença de estudante (figura 12). A versão real é feita em MDF com medidas de 15x15x5cm, como a Figura 13 mostra. Os cortes são feitos utilizando uma Cortador a Laser, em que é possível realizá-los com uma precisão milimétrica.
 
-![](RackMultipart20210918-4-z2pske_html_b72de9e8866792c8.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/3d_encapsulamento1.png)
 
-![](RackMultipart20210918-4-z2pske_html_b6270324fdd226e.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/3d_encapsulamento2.png)
 
 Figura 12 - Encapsulamento no software Fusion 360
 
-![](RackMultipart20210918-4-z2pske_html_42b424463c51853a.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/encapsulamento1.jpg)
 
 Figura 13 - Encapsulamento em MDF
 
 A placa de circuito impresso é feita utilizando uma placa de fenolite. A mesma passa por um processo conhecido como fresagem, em que uma máquina faz as trilhas de forma precisa.
 
-![](RackMultipart20210918-4-z2pske_html_c24680814cb0fcd4.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/montagem.jpg)
 
 Figura 14 - Placa de circuito impresso com componentes soldados
 
-## **5.4 COLETA E ANÁLISE DE DADOS**
+### **5.4 COLETA E ANÁLISE DE DADOS**
 
 A coleta acontece através dos sensores, que transmite essa informação para um gateway através de comunicação de baixo consumo de energia e longa distância (LoRaWAN), e redireciona a mesma para o servidor para que seja feito o cálculo que determina o risco de fogo da região.
 
@@ -193,19 +199,19 @@ T = temperatura do ar em Célsius
 
 Quando o índice (B) for maior ou igual a 3, o risco é baixo. Quando for maior que 2,5 e menor que 3, o risco é moderado. Por último, quando o índice for menor ou igual a 2,5, indica um risco elevado.
 
-# **6.**** RESULTADOS**
+##  **6.**** RESULTADOS**
 
-## **6.1 Testes**
+### **6.1 Testes**
 
 Os testes feitos foram feitos a partir dos dados que foram coletados colocando os sensores junto a uma fogueira controlada;
 
 com a fogueira apagada verificamos os seguintes dados (Figura 16).
 
-![](RackMultipart20210918-4-z2pske_html_4afea6fff3ee1a93.jpg)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/teste_pratico1.jpg)
 
 Figura 15 -Imagem demonstra uma fogueira apagada
 
-![](RackMultipart20210918-4-z2pske_html_4345fba78f7c5f3a.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/dados_teste1.png)
 
 Figura 16 - Imagem demonstra os parâmetros coletados com a fogueira apagada
 
@@ -215,11 +221,11 @@ Aplicando o Índice de Angstron nesses valores é possível notar que:
 
 No cenário sem fogo e com os parâmetros ambientais medidos, o risco calculado de incêndio por meio do Índice de Angstron adotado foi baixo. Enquanto que, com a fogueira acesa (Figura 17), é possível verificar que as variáveis ambientais mudaram, e isso impactou diretamente o risco de fogo (Figura 18).
 
-![](RackMultipart20210918-4-z2pske_html_552e4131a52a851b.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/teste_pratico2.png)
 
 Figura 17 - Imagem demonstra um protótipo perto de uma fogueira acesa
 
-![](RackMultipart20210918-4-z2pske_html_6198d2810a11b481.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/dados_teste2.png)
 
 Figura 18 - Imagem demonstra os parâmetros coletados com a fogueira acesa
 
@@ -229,7 +235,7 @@ Analisando o cenário com fogo, foi possível notar que:
 
 Pelo fato do índice ser menor que um, o risco de fogo demonstra ser muito provável.
 
-# **7. CONCLUSÃO/CONSIDERAÇÕES FINAIS**
+##  **7. CONCLUSÃO/CONSIDERAÇÕES FINAIS**
 Durante o desenvolvimento do projeto e no estudo sobre o tema, foi percebido que o sensor de Dióxido de Carbono era irrelevante para determinar se existia o risco de fogo a priori. Não foi encontrado nenhuma base científica que comprove o uso do CO2 para medir tal parâmetro, portanto este sensor não fará parte da primeira versão; serão necessários novos estudos e testes para avaliar se faz sentido ao projeto usufruir deste sensor.
 
 Dentre as limitações do projeto, destaca-se que nos testes dos sensores houveram algumas dificuldades na montagem do circuito, prejudicando os resultados na primeira leva de testes, porém foi ajustado posteriormente.
@@ -238,7 +244,7 @@ Como previsto, o Índice de Angstron se demonstrou eficiente para medir os parâ
 
 Foi atestado que o dispositivo pode ser de grande ajuda para áreas com índice elevado de incêndios naturais recorrentes (área de risco observado). Por meio de uma malha de dispositivos, seria possível cobrir uma área extensa para que seja feito o monitoramento em tempo real desses parâmetros ambientais e garantindo que o usuário consiga acompanhar e se antecipar aos possíveis incêndios da sua região.
 
-# **8. REFERÊNCIAS BIBLIOGRÁFICAS**
+##  **8. REFERÊNCIAS BIBLIOGRÁFICAS**
 
 - ALMEIDA, Rafaela Gomes de; CAVALCANTE, Arnóbio de Mendonça Barreto; SILVA, Emerson Mariano da. Impactos das Mudanças Climáticas no Bioma Caatinga na Percepção dos Professores da Rede Pública Municipal de General Sampaio - Ceará. Rev. bras. meteorol., São Paulo , v. 35, n. 3, p. 397-405, Sept. 2020 . Available from \&lt;http://www.scielo.br/scielo.php?script=sci\_arttext&amp;pid=S0102-77862020000300397&amp;lng=en&amp;nrm=iso\&gt;. access on 07 Mar. 2021. Epub Sep 07, 2020. [https://doi.org/10.1590/0102-7786353002](https://doi.org/10.1590/0102-7786353002)
 
