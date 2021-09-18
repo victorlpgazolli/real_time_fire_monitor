@@ -3,6 +3,10 @@
 > Projeto desenvolvido para a matéria de Ciências de Ambiente e Fundamentos de Internet das Coisas.
 
 ##  Indice:
+- Integrantes
+  - [Felipe Santos Bardella](https://www.linkedin.com/in/felipe-bardella-5846a117b/)
+  - [Victor Leonardo Pasqualini Gazolli](https://www.linkedin.com/in/victor-g-6bbab6103/)
+  - [Vinicius Zancanari de Santana](https://www.linkedin.com/in/vinicius-zancanari-de-santana/)
 - Documentos
   - [Escopo do projeto](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/docs/RDE.pdf)
   - [Requisitos Técnicos](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/docs/LRT.pdf)
@@ -37,10 +41,6 @@
   - [Testes](#testes)
 - [Considerações Finais](#considerações-finais)
 - [Rerefências Bibliográficas](#referências-bibliográficas)
-- Integrantes
-  - Felipe Santos Bardella
-  - Victor Leonardo Pasqualini Gazolli
-  - Vinicius Zancanari de Santana
 
 ## **RESUMO**
 
