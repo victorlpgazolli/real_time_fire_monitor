@@ -1,5 +1,6 @@
 # Projeto de internet das coisas de baixo custo para monitoramento de incêndios em áreas sensíveis
 
+> Projeto desenvolvido para a matéria de Ciências de Ambiente e Fundamentos de Internet das Coisas.
 
 ##  Indice:
 - Documentos
@@ -79,7 +80,9 @@ Os nós da rede são responsáveis pela captação dos parâmetros ambientais co
 
 ![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo2.png)
 
-Figura 2 - Diagrama de blocos do projeto ![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo2.png)
+![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo2.png)
+
+Figura 2 - Diagrama de blocos do projeto 
 
 ![](https://github.com/victorlpgazolli/real_time_fire_monitor/blob/master/images/fluxo3.png)
 
