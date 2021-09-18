@@ -15,4 +15,4 @@
 - Código fonte do projeto
   - [Backend](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/backend)
   - [Frontend](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/frontend)
-  - [Firmware](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/frontend)
+  - [Firmware](https://github.com/victorlpgazolli/real_time_fire_monitor/tree/master/src/firmware)
