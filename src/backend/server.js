@@ -17,7 +17,7 @@ const whitelist = [
     "http://localhost:3333",
     "http://localhost:3000",
     "https://monitoramentodeincendios.vercel.app",
-    "https://monitoramentodeincendios.ga",
+    "https://monitoramentodeincendios.victorlpgazolli.dev",
     "https://fire-monitor-frontend-git-master-victorlpgazolli.vercel.app"
 ];
 
